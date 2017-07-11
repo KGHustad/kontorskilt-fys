@@ -1,4 +1,4 @@
-En mal for kontorskilt ved fysisk institutt.
+En mal for kontorskilt ved Fysisk institutt.
 
 ### Kommandoer
 For å kjøre pdflatex
