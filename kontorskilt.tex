@@ -1,0 +1,72 @@
+\documentclass[showtrims, 14pt]{memoir}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{charter}
+\usepackage{microtype}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+
+\renewcommand{\sfdefault}{phv}
+\definecolor{uioblack}{cmyk}{0, 0, 0, 1}
+\setlength{\parindent}{0pt}
+\pagenumbering{gobble}
+
+\stockaiv
+\settrimmedsize{145mm}{100mm}{*}
+\settrims{76mm}{55mm}
+\setlrmarginsandblock{5mm}{5mm}{*}
+\setulmarginsandblock{16mm}{16mm}{*}
+\setlength{\headheight}{0bp}
+\setlength{\headsep}{0bp}
+\setlength{\footskip}{0bp}
+\checkandfixthelayout
+
+\makeatletter
+\expandafter\def\csname pgf@sh@np@current page\endcsname
+{
+    \def\southwest{\pgfqpoint{55mm}{76mm}}
+    \def\northeast{\pgfqpoint{155mm}{221mm}}
+}
+\makeatother
+
+\renewcommand{\familydefault}{\sfdefault}
+\begin{document}
+
+    % COMPILE TWICE FOR CORRECT LAYOUT
+
+    % IN ORDER TO GET THE CORRECT SIZE,
+    % PRINT WITH THE PAGE HANDLING OPTION
+    % 'PAGE SCALING: NONE'
+
+    \begin{tikzpicture}[remember picture,
+                        overlay,
+                        shift = {(current page.north west)}
+                        ]
+        \node[anchor=north west,minimum width=10cm,minimum height=3cm,fill=uioblack,text=white] (room) at (0, 0){\fontsize{3cm}{3.2cm}\selectfont 
+            V310  %room number
+        };
+
+        % CHOOSE ONE:
+        %\node[anchor=south east] (seal) at (current page.south east){\includegraphics[scale=0.3]{fig/english-logo}};
+        \node[anchor=south east] (seal) at (current page.south east){\includegraphics[scale=0.3]{fig/norsk-logo}};
+
+        \node[anchor=south east] (apollon) at (seal.north east){\includegraphics[scale=0.6]{{fig/apollon}}};
+    \end{tikzpicture}
+
+\bigskip
+\medskip
+
+\subsection*{Masterstudenter}
+Person 1
+
+Person 2
+
+\subsection*{Bachelorstudenter}
+Person 3
+
+Person 4
+
+\end{document}
