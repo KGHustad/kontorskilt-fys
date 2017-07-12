@@ -1,5 +1,11 @@
 En mal for kontorskilt ved Fysisk institutt.
 
+---
+
+![Eksempel](https://github.com/KGHustad/kontorskilt-fys/raw/master/samples/kontorskilt_500px.png)
+
+---
+
 ### Kommandoer
 For å kjøre pdflatex
 ```
